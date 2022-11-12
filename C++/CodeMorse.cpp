@@ -7,18 +7,18 @@ void textversmorse(){
     char text[36] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     std::string morse[36] = {".-","-...","-.-.","-..",".","..-","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
 
-    std::string phrase;
+    std::string mot;
     int input;
     
-    std::cout << "Enter the Text You Wish to Translate into Morse Code.\n";
-    std::getline(std::cin,phrase);
+    std::cout << "Ecris le mot que tu veux traduire:\n";
+    std::getline(std::cin,mot);
     
-    cout << "Your Entered Text in Morse Code:\n";
+    cout << "La traduction est:\n";
  
-    for (int i = 0; i<phrase.length(); ++i){
-        for (int counter = 0; counter < 36; counter++){
-            if (phrase.at(i) == text[counter]){
-                cout << morse[counter];
+    for (int i = 0; i < mot.length(); ++i){
+        for (int conteur = 0; conteur < 36; conteur++){
+            if (mot.at(i) == text[conteur]){
+                cout << morse[conteur];
             }
         }
     }
