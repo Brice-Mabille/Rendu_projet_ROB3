@@ -1,7 +1,7 @@
-#include <iostream>
-#include <string>
-///#include "Morse.h"
+#include "Lettreclass.h"
+
 using namespace std;
+
 
 void textversmorse(){
     char text[36] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
@@ -19,7 +19,6 @@ void textversmorse(){
         for (int counter = 0; counter < 36; counter++){
             if (phrase.at(i) == text[counter]){
                 cout << morse[counter];
-                clignotement(morse[counter]);
             }
         }
     }
@@ -30,4 +29,3 @@ int main(){
     textversmorse();
     
 }
-
