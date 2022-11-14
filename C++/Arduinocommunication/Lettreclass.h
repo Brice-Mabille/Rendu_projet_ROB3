@@ -1,6 +1,6 @@
-#ifndef STRING_H
+#ifndef STRING_H  ///importation des bibliothèques  
 #define STRING_H
-#include <string>
+#include <String>
 #endif
 
 #ifndef IOSTREAM
@@ -11,12 +11,13 @@
 #ifndef LETTRE_H
 #define LETTRE_H
 
-class Lettre
+class Lettre   /// Definition de ma classe Lettre
 {
 
 private:
     char text = 0;
-    std::string morse;
+    String morse;
+    String morse[conteur];
 
 public:
     Lettre(char text);
