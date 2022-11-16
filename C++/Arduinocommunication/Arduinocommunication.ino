@@ -30,11 +30,16 @@ void clignotement(String x) {   ///Fonction permettant de communiquer un tiret o
 void setup() {   ///Téléversement du code pour le clignotement sur la Arduino
 
   Serial.begin(9600);
-  cm.textversmorse();
   pinMode(LED_BUILTIN, OUTPUT);
-  clignotement(cm.morse);
+  
 }
 
 void loop() {
 
+if (Serial.available()){
+      cm.mot = Serial.readString();
+      cm.textversmorse();
+      clignotement(cm.morse);
+
+}
 }

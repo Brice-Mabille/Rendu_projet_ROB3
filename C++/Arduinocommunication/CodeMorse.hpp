@@ -12,6 +12,7 @@ class CodeMorse{   /// Definition de ma classe Lettre
 
   public:
     CodeMorse();
+    String mot;
     String morse;
     void traduction(char text);
     void textversmorse();
