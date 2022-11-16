@@ -1,31 +1,26 @@
-#include "Lettreclass.h"
+#include "CodeMorse.hpp"
 
-using namespace std;
+CodeMorse::CodeMorse(){};
 
-
-void textversmorse(){  ///fonction permettant de demander un mot et retournant la traduction en Morse
+void CodeMorse::textversmorse(){  ///fonction permettant de demander un mot et retournant la traduction en Morse
     char text[36] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-    std::string morse[36] = {".-","-...","-.-.","-..",".","..-","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+    String morse[36] = {".-","-...","-.-.","-..",".","..-","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
 
-    std::string mot;
-    int input;
+    String mot;
     
-    std::cout << "Ecris le mot que tu veux traduire:\n";   ///Pour Arduino,on peut remplacer le cout par Serial.println()
-    std::getline(std::cin,mot);
+    Serial.println("Ecris le mot que tu veux traduire:\n");
     
-    cout << "La traduction est:\n";
+    if (Serial.available()){
+      mot = Serial.readString();
+    }
+
+    Serial.println("La traduction est:\n");
  
     for (int i = 0; i < mot.length(); ++i){
         for (int j = 0; j < 36; j++){
-            if (mot.at(i) == text[j]){
-                cout << morse[j];
+            if (mot.charAt(i) == text[j]){
+                Serial.println(morse[j]);
             }
         }
     }
-}
-
-int main(){
-    
-    textversmorse();
-    
 }

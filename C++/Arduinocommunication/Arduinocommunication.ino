@@ -1,6 +1,7 @@
-#include "Lettreclass.h"   ///Importation des fichiers
-#include "CodeMorse.cpp"
+#include "CodeMorse.hpp"   ///Importation des fichiers
 
+
+CodeMorse cm;
 
 void tiret() {   ///Fonction permettant de communiquer un tiret avec Arduino
   digitalWrite(LED_BUILTIN, HIGH);
@@ -29,10 +30,9 @@ void clignotement(String x) {   ///Fonction permettant de communiquer un tiret o
 void setup() {   ///Téléversement du code pour le clignotement sur la Arduino
 
   Serial.begin(9600);
-  Serial.println("Mot?")
-  Serial.print(morse[j])
+  cm.textversmorse();
   pinMode(LED_BUILTIN, OUTPUT);
-  clignotement(morse[j]);
+  clignotement(cm.morse);
 }
 
 void loop() {
