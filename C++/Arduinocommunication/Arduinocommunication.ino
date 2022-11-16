@@ -30,9 +30,9 @@ void setup() {   ///Téléversement du code pour le clignotement sur la Arduino
 
   Serial.begin(9600);
   Serial.println("Mot?")
-  Serial.print(morse[conteur])
+  Serial.print(morse[j])
   pinMode(LED_BUILTIN, OUTPUT);
-  clignotement(morse[conteur]);
+  clignotement(morse[j]);
 }
 
 void loop() {

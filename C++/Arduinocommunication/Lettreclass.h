@@ -17,7 +17,6 @@ class Lettre   /// Definition de ma classe Lettre
 private:
     char text = 0;
     String morse;
-    String morse[conteur];
 
 public:
     Lettre(char text);
@@ -27,3 +26,25 @@ public:
 };
 
 #endif
+
+
+#ifndef CLIGNOTEMENT_H
+#define CLIGNOTEMENT_H
+
+class Clignotement   /// Definition de ma classe Clignotement
+{
+
+private:
+    String x = 0;
+    String morse;
+
+public:
+    Clignotement(String x);
+    Clignotement();
+    void point();
+    void tiret();
+    void clignotement(String x);
+};
+
+#endif
+

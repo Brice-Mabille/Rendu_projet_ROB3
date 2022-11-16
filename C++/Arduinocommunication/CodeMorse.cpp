@@ -16,9 +16,9 @@ void textversmorse(){  ///fonction permettant de demander un mot et retournant l
     cout << "La traduction est:\n";
  
     for (int i = 0; i < mot.length(); ++i){
-        for (int conteur = 0; conteur < 36; conteur++){
-            if (mot.at(i) == text[conteur]){
-                cout << morse[conteur];
+        for (int j = 0; j < 36; j++){
+            if (mot.at(i) == text[j]){
+                cout << morse[j];
             }
         }
     }
