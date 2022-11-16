@@ -20,10 +20,10 @@ class CodeMorse{   /// Definition de ma classe Lettre
 #endif
 
 
-///#ifndef CLIGNOTEMENT_H
-///#define CLIGNOTEMENT_H
+#ifndef CLIGNOTEMENT_H
+#define CLIGNOTEMENT_H
 
-/*class Clignotement   /// Definition de ma classe Clignotement
+class Clignotement   /// Definition de ma classe Clignotement
 {
 
 private:
@@ -37,5 +37,5 @@ public:
     void clignotement(String x);
 };
 
-#endif*/
+#endif
 
