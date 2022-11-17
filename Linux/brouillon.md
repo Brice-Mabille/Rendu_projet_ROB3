@@ -61,4 +61,6 @@ brice@brice-VirtualBox:~/Documents/TDSQL$ touch horodatage.sh
 brice@brice-VirtualBox:~/Documents/TDSQL$ open horodatage.sh
 
 
+
+
 	
