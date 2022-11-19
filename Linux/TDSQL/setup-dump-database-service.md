@@ -17,7 +17,7 @@ sudo nano /lib/systemd/system/database.service
 ````
 
 J'écris ensuite le script pour le service qui se trouve dans le fichier: dump-database.service.md
-
+Puis je réalise ces commandes pour activer le service.
 ````shell
 sudo systemctl daemon-reload
 
