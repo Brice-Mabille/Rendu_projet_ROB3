@@ -15,14 +15,43 @@ sudo systemctl start mysql.service
 Par la suite, il est préférable de sécuriser la base de donnée:
 
 ````shell
+
+sudo mysql_secure_installation
+````
+
+Mais lors de la mise en place de la sécurité, un problème m'est apparu: le mot de passe n'est pas accepté. Je réalise alors les requètes suivantes:
+
+````
 sudo mysql
 
-mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'BMatsql6';
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'BMatsql6*';
 
 mysql> exit
 ````
+L'erreur est alors corrigée.
 
-Mais lors de la mise en place de la sécurité, un problème m'est apparu, je pense avoir mal réagis au demandes faite par le terminal et ne trouvant pas la solution, je décide d'avancer en créant la base de donnée à partir du fichier donné.
+Je décide de créer un nouvel utilisateur et lui accorder des privilèges:
+
+````shell
+mysql -u root -p
+
+mysql> CREATE USER 'brice'@'localhost' IDENTIFIED BY 'BMatsql6*';
+
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'brice'@'localhost' WITH GRANT OPTION;
+
+mysql> show databases;
+
+mysql> exit
+
+````
+
+Je vérifie ensuite si MySQL fonctionne:
+
+````shell
+sudo systemctl status mysql.service
+````
+
+MySQL est alors opérationnel.
 
 ## Importation de la base de donnée
 
@@ -46,36 +75,16 @@ unzip mysqlsampledatabase.zip
 rm mysqlsampledatabase.zip
 ````
 
-Après avoir créé puis décompressé le fichier. Je réalise que l'étape de sécurité est importante; je relance alors la phase de sécurisation:
-
-````shell
-sudo mysql_secure_installation
-
-sudo systemctl status mysql
-
-sudo systemctl enable mysql
-
-sudo mysql -u root -p
-
-mysql> show databases;
-
-mysql> exit
-
-Bye
-````
-
-Cette fois ci, le problème a été résolu, la sécurité est mise en place. 
-
 Par ailleurs, je duplique le fichier pour pouvoir en conserver un et donner l'extension "bz2" à l'autre:
 
 ````shell
-cp mysqlsampledatabase.sql a.sql
+cp mysqlsampledatabase.sql copie.sql
 
 sudo apt install bzip2
 
-bzip2 a.sql
+bzip2 copie.sql
 
-mv a.sql.bz2 Tdsql.bz2
+mv copie.sql.bz2 Tdsql.bz2
 
 brice@brice-VirtualBox:~/Documents/TDSQL$ ls
 
