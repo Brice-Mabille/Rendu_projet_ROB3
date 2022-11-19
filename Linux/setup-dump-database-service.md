@@ -1,1 +1,0 @@
-* Un readme ou un script expliquant comment configurer le service. NB : Si vous faites un readme, vous devez indiquer les commandes utilisées
