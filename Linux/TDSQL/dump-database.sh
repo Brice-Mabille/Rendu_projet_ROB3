@@ -6,7 +6,7 @@ user="brice"
 password="BMatsql6*"
 BDD="classicmodels"
 
-chemin="/home/brice/Documents/mysqlsampledatabase"
+chemin="/home/brice/Documents/TDSQL/mysqlsampledatabase"
 Date="$(date +%Y-%m-%d-%H-%M-%S)"
 Fichier="${chemin}${Date}.sql"
 
