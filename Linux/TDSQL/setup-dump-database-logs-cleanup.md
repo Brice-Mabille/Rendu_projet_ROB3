@@ -21,14 +21,19 @@ systemctl status rsyslog.service
 
 ````shell
 iptables -N LOGACCEPT
+
 iptables -A LOGACCEPT -j LOG --log-prefix 'iptables:' -m limit --limit 2/min
+
 iptables -A LOGACCEPT -j ACCEPT
 ````
 Ensuite, j'ai utilisé cette chain dans les règles.
+
 ````shell
 iptables -t filter -A INPUT -p tcp --dport 22 -j LOGACCEPT
 ````
+
 J'ai ensuite créé un fichier de configuration pour iptables
+
 ````shell
 sudo nano /etc/rsyslog.d/iptables.conf
 ````
@@ -49,6 +54,7 @@ La seconde ligne signifie qu'il n'est pas nécessaire de logger l'évènement pr
 ````shell
 systemctl restart rsyslog.service
 ````
+
 Maintenant je consulte mysql.log avec la commande
 
 ````shell
