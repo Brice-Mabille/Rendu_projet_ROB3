@@ -101,7 +101,7 @@ mysql> use classicmodels;
 mysql> show tables;
 ````
 
-![image](C:\Users\brice\OneDrive\Documents\GitHub\Rendu_projet_ROB3\Linux\Images\TDSQL.jpg)
+![image](Linux\Images\TDSQL.jpg)
 
-![image](C:\Users\brice\OneDrive\Documents\GitHub\Rendu_projet_ROB3\Linux\Images\TDSQL2.png)
+![image](Linux\Images\TDSQL2.png)
 

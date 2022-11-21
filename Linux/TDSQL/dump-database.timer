@@ -1,0 +1,13 @@
+
+````shell
+[Unit]
+Description=10min
+
+[Timer]
+OnCalendar=*:0/10
+AccuracySec=1s
+Unit=backup.service
+
+[Install]
+WantedBy=timers.target
+````
