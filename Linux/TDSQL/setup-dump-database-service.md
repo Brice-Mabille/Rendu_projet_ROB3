@@ -21,11 +21,11 @@ Puis je réalise ces commandes pour activer le service.
 ````shell
 sudo systemctl daemon-reload
 
-sudo systemctl enable dump-database.service
+sudo systemctl enable database.service
 
-sudo systemctl start dump-database.service
+sudo systemctl start database.service
 
-sudo systemctl status dump-database.service
+sudo systemctl status database.service
 ````
 
 Malheureusement, je n'obtiens pas ce qui est prévu, l'activation du service échoue.

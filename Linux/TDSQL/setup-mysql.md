@@ -105,5 +105,3 @@ mysql> show tables;
 
 ![image](C:\Users\brice\OneDrive\Documents\GitHub\Rendu_projet_ROB3\Linux\Images\TDSQL2.png)
 
-
-script sh
