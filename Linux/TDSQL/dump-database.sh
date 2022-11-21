@@ -1,5 +1,3 @@
-* Un script de base de sauvegarde de base de données
-
 #!/bin/bash
 
 user="brice"

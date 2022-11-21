@@ -1,5 +1,3 @@
-
-````shell
 [Unit]
 Description=database
 
@@ -7,5 +5,4 @@ Description=database
 ExecStart=/usr/bin/script.sh
 
 [Install]
-WantedBy=multi-userr.target
-````
+WantedBy=multi-user.target
