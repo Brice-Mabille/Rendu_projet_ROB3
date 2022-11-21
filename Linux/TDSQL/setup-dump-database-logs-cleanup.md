@@ -52,6 +52,6 @@ systemctl restart rsyslog.service
 Maintenant je consulte mysql.log avec la commande
 
 ````shell
-tail -f /var/log/iptables.log
+tail -f /var/log/mysql.log
 ````
 
