@@ -32,3 +32,9 @@ sudo systemctl status database.service
 Malheureusement, je n'obtiens pas ce qui est prévu, l'activation du service échoue.
 
 ![image](Linux\Images\TDSQL5.png)
+
+Par contre, je suis parvenu à faire fonctionner le timer:
+
+![image](Linux\Images\TDSQL6.png)
+
+

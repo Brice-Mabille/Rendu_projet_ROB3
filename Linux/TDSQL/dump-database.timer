@@ -3,8 +3,6 @@ Description=10min
 
 [Timer]
 OnUnitActiveSec=10min
-AccuracySec=1s
-Unit=backup.service
 
 [Install]
 WantedBy=timers.target

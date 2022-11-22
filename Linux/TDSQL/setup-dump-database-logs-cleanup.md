@@ -61,3 +61,6 @@ Maintenant je consulte mysql.log avec la commande
 tail -f /var/log/mysql.log
 ````
 
+Mais en ce qui concerne cette partie sur les logs, je n'ai pas encore bien compris leur utilisation...
+
+
