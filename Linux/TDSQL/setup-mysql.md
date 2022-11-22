@@ -30,7 +30,7 @@ mysql> exit
 L'erreur est alors corrigée.
 Je relance la sécurisation et je réponds aux demandes:
 
-![image](Linux\Images\TDSQLSecure.png)
+![image](./../Images/TDSQLSecure.png)
 
 Puis je décide de créer un nouvel utilisateur et lui accorder des privilèges:
 
@@ -54,7 +54,7 @@ sudo systemctl status mysql.service
 
 MySQL est alors opérationnel:
 
-![image](Linux\Images\TDSQL4.png)
+![image](./../Images/TDSQL4.png)
 
 ## Importation de la base de donnée
 
@@ -105,8 +105,7 @@ mysql> use classicmodels;
 
 mysql> show tables;
 ````
+![image](./../Images/TDSQL.png)
 
-![image](Linux\Images\TDSQL.png)
-
-![image](Linux\Images\TDSQL2.png)
+![image](./../Images/TDSQL2.png)
 

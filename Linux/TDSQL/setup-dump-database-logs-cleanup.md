@@ -14,7 +14,7 @@ ss -utln
 systemctl status rsyslog.service
 ````
 
-![image](Linux\Images\TDSL3.png)
+![image](./../Images/TDSL3.png)
 
 
 ### Création d'une chain pour pouvoir autoriser et logger un flux avec IPTABLES
