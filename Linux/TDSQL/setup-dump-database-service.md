@@ -7,7 +7,7 @@ https://tecadmin.net/run-shell-script-as-systemd-service
 Je commence par m'accorder les droits sur le fichier:
 
 ````shell
-$ sudo chmod +x script.sh
+sudo chmod +x script.sh
 ````
 
 Je créé ensuite le fichier database.service et je le sauvegarde dans /lib/systemd/system/:
@@ -30,3 +30,5 @@ sudo systemctl status database.service
 ````
 
 Malheureusement, je n'obtiens pas ce qui est prévu, l'activation du service échoue.
+
+![image](Linux\Images\TDSQL5.png)

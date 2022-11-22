@@ -28,8 +28,11 @@ mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'B
 mysql> exit
 ````
 L'erreur est alors corrigée.
+Je relance la sécurisation et je réponds aux demandes:
 
-Je décide de créer un nouvel utilisateur et lui accorder des privilèges:
+![image](Linux\Images\TDSQLSecure.png)
+
+Puis je décide de créer un nouvel utilisateur et lui accorder des privilèges:
 
 ````shell
 mysql -u root -p
@@ -49,7 +52,9 @@ Je vérifie ensuite si MySQL fonctionne:
 sudo systemctl status mysql.service
 ````
 
-MySQL est alors opérationnel.
+MySQL est alors opérationnel:
+
+![image](Linux\Images\TDSQL4.png)
 
 ## Importation de la base de donnée
 

@@ -2,7 +2,7 @@
 Description=10min
 
 [Timer]
-OnCalendar=*:0/10
+OnUnitActiveSec=10min
 AccuracySec=1s
 Unit=backup.service
 
