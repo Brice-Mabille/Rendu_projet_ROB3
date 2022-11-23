@@ -60,7 +60,24 @@ Maintenant je consulte mysql.log avec la commande
 ````shell
 tail -f /var/log/mysql.log
 ````
+````shell
+nano /etc/logrotate.conf
+````
 
-Mais en ce qui concerne cette partie sur les logs, je n'ai pas encore bien compris leur utilisation...
+Mais en ce qui concerne cette partie sur les logs, je n'ai pas encore bien compris l'utilisation...
+
+J'ai donc changé mon fusil d'épaule et je me suis concentré sur l'envoi des logs avec la commande "echo".
+J'ai donc rajouté dans le script.sh la requete suivante:
+
+````shell
+echo "sauvegarde effectuée" >> /var/log/database.log
+````
+
+Par la suite, j'ai compris que pour controler la taille du fichier pour les logs, je devais utilisé la commande "ulimit":
+
+````shell
+$ ulimit -S<-f> <Valeur>
+````
+L'option "-f" permet de controler la taille du fichier.
 
 

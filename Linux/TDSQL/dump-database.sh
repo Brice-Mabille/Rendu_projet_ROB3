@@ -8,7 +8,9 @@ chemin="/home/brice/Documents/TDSQL/mysqlsampledatabase"
 Date="$(date +%Y-%m-%d-%H-%M-%S)"
 Fichier="${chemin}${Date}.sql"
 
-mysqldump -u $user -p $BDD >$Fichier
+mysqldump -u $user -p$password $BDD >$Fichier
+
+bzip2 ${Fichier}
 
 n=1
 for file in $(ls -t $chemin*); do
