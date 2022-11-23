@@ -10,6 +10,8 @@ Fichier="${chemin}${Date}.sql"
 
 mysqldump -u $user -p$password $BDD >$Fichier
 
+echo "sauvegarde effectuée" >> /var/log/database.log
+
 bzip2 ${Fichier}
 
 n=1
