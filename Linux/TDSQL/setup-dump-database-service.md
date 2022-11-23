@@ -47,5 +47,3 @@ sudo systemctl status database.timer
 ![image](./../Images/TDSQL7.png)
 
 Le programme s'execute correctement, je suis content.
-
-

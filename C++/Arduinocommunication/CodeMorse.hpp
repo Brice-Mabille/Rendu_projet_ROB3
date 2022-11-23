@@ -1,8 +1,7 @@
-#include "Arduino.h"
-
-
 #ifndef CODEMORSE_H
 #define CODEMORSE_H
+
+#include "Arduino.h"
 
 class CodeMorse{   /// Definition de ma classe Lettre
 
@@ -12,30 +11,11 @@ class CodeMorse{   /// Definition de ma classe Lettre
 
   public:
     CodeMorse();
+    String morsemot;
     String mot;
     String morse;
     void traduction(char text);
     void textversmorse();
-};
-
-#endif
-
-
-#ifndef CLIGNOTEMENT_H
-#define CLIGNOTEMENT_H
-
-class Clignotement   /// Definition de ma classe Clignotement
-{
-
-private:
-    String morse;
-
-public:
-    Clignotement(String x);
-    Clignotement();
-    void point();
-    void tiret();
-    void clignotement(String x);
 };
 
 #endif
