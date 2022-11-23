@@ -2,7 +2,7 @@
 Description=database
 
 [Service]
-ExecStart=/usr/bin/script.sh
+ExecStart=/home/brice/Documents/TDSQL/script.sh
 
 [Install]
 WantedBy=multi-user.target
