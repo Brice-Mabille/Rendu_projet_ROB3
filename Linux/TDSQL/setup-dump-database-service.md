@@ -29,6 +29,23 @@ sudo systemctl start database.service
 sudo systemctl status database.service
 ````
 ![image](./../Images/TDSQL5.png)
+
+De même pour le timer:
+
+````shell
+sudo systemctl daemon-reload
+
+sudo systemctl enable database.timer
+
+sudo systemctl start database.timer
+
+sudo systemctl status database.timer
+````
+
 ![image](./../Images/TDSQL6.png)
+
+![image](./../Images/TDSQL7.png)
+
+Le programme s'execute correctement, je suis content.
 
 

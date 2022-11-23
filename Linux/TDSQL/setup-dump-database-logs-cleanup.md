@@ -73,11 +73,11 @@ J'ai donc rajouté dans le script.sh la requete suivante:
 echo "sauvegarde effectuée" >> /var/log/database.log
 ````
 
-Par la suite, j'ai compris que pour controler la taille du fichier pour les logs, je devais utilisé la commande "ulimit":
+Par la suite, j'ai compris que pour controler la taille du fichier pour les logs, je devais utilisé la commande "ulimit -S<-f> <Valeur>":
 
 ````shell
-$ ulimit -S<-f> <Valeur>
+$ ulimit -Sf 300
 ````
 L'option "-f" permet de controler la taille du fichier.
 
-
+Seul problème est que je ne trouve pas comment vérifié si la commande a fonctionné.
