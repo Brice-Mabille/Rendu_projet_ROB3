@@ -21,9 +21,20 @@ void Clignotement::tempsattente(char y){
 }
 
 void Clignotement::clignotementmillis(String x) {   ///Fonction permettant de communiquer un tiret ou un point selon le mot demandé avec Arduino
-  for (int i = 0; i < x.length();) {
+  millis();
+  for (int i = 0; i < x.length();i++) {
+    tempsattente(x.charAt(i));
     if (x.charAt(i) == '.') {
-      tempsattente(x.charAt(i));
+      LEDHIGH();
+      if ((millis()- millisactuel)>tempsattent){
+        LEDLOW();
+        int etatactuel = LOW;
+        millisactuel = millis();
+      }
+      if (etatactuel == LOW && (millis()-millisactuel)>500){
+        i++;
+      }
+    }else if (x.charAt(i) == '-'){
       LEDHIGH();
       if ((millis()-millisactuel)>tempsattent){
         LEDLOW();
