@@ -8,7 +8,6 @@ void setup() {   ///Téléversement du code pour le clignotement sur la Arduino
 
   Serial.begin(9600);
   pinMode(LED_BUILTIN, OUTPUT);
-  
 }
 
 void loop() {
@@ -16,8 +15,8 @@ void loop() {
 if (Serial.available()){
       cm.mot = Serial.readString();
       cm.textversmorse();
-      //cl.clignotementmillis(cm.morsemot);
-      cl.clignotementdelay(cm.morsemot);
+      cl.clignotementmillis(cm.morsemot);
+      //cl.clignotementdelay(cm.morsemot);
 }
 
 }

@@ -3,50 +3,6 @@
 Clignotement::Clignotement(){};
 
 
-void Clignotement::LEDHIGH() {   ///Fonction permettant d'allumer la led avec Arduino
-  int millisactuel = millis();
-  digitalWrite(LED_BUILTIN, HIGH);
-}
-
-void Clignotement::LEDLOW() {   ///Fonction permettant d'éteindre la led avec Arduino
-  digitalWrite(LED_BUILTIN, LOW);
-}
-
-void Clignotement::tempsattente(char y){
-  if (y=='.'){
-    int tempsattent = 1000;
-  }else if (y=='-'){
-    int tempsattent = 2000;
-  }
-}
-
-void Clignotement::clignotementmillis(String x) {   ///Fonction permettant de communiquer un tiret ou un point selon le mot demandé avec Arduino
-  millis();
-  for (int i = 0; i < x.length();i++) {
-    tempsattente(x.charAt(i));
-    if (x.charAt(i) == '.') {
-      LEDHIGH();
-      if ((millis()- millisactuel)>tempsattent){
-        LEDLOW();
-        int etatactuel = LOW;
-        millisactuel = millis();
-      }
-      if (etatactuel == LOW && (millis()-millisactuel)>500){
-        i++;
-      }
-    }else if (x.charAt(i) == '-'){
-      LEDHIGH();
-      if ((millis()-millisactuel)>tempsattent){
-        LEDLOW();
-        int etatactuel = LOW;
-        millisactuel = millis();
-      }
-      if (etatactuel == LOW && (millis()-millisactuel)>500){
-        i++;
-      }
-    }
-  }
-}
 
 void Clignotement::tiret() {   ///Fonction permettant de communiquer un tiret avec Arduino
   digitalWrite(LED_BUILTIN, HIGH);
@@ -69,5 +25,28 @@ void Clignotement::clignotementdelay(String x) {   ///Fonction permettant de com
     }else if (x.charAt(i) == '-'){
       tiret();
     }
+  }
+}
+
+void Clignotement::clignotementmillis(String x) {   ///Fonction permettant de communiquer un tiret ou un point selon le mot demandé avec Arduino
+  for (int i = 0; i < x.length();i++) {
+    if (x.charAt(i)=='.'){
+      millisactuel = millis();
+      while ((millis()- millisactuel) < 1000){
+        digitalWrite(LED_BUILTIN, HIGH);
+      }
+      while ((millis()-millisactuel) < 2000){
+        digitalWrite(LED_BUILTIN, LOW);
+      }
+    }
+    else if (x.charAt(i)=='-'){
+      millisactuel = millis();
+      while ((millis()- millisactuel) < 2000){
+        digitalWrite(LED_BUILTIN, HIGH);
+      }
+      while ((millis()-millisactuel) < 3000){
+        digitalWrite(LED_BUILTIN, LOW);
+      }
+    } 
   }
 }
