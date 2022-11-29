@@ -3,7 +3,7 @@
 
 #include "Arduino.h"
 
-class CodeMorse{   /// Definition de ma classe Lettre
+class CodeMorse{   /// Definition de ma classe CodeMorse
 
   private:
     char text = 0;

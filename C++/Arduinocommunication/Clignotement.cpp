@@ -1,26 +1,26 @@
 #include "Clignotement.hpp"
 
-Clignotement::Clignotement(){};
+Clignotement::Clignotement(){};   ///Constructeur
 
 
 
-void Clignotement::tiret() {   ///Fonction permettant de communiquer un tiret avec Arduino
+void Clignotement::tiret() {   ///Fonction permettant de communiquer un tiret avec Arduino avec DELAY
   digitalWrite(LED_BUILTIN, HIGH);
-  delay(2000);
+  delay(2000);                              ///2 secondes pour un tiret
   digitalWrite(LED_BUILTIN, LOW);
-  delay(1000);
+  delay(1000);                              ///pause de 1 seconde pour la lettre suivante
 }
 
-void Clignotement::point() {   ///Fonction permettant de communiquer un point avec Arduino
+void Clignotement::point() {   ///Fonction permettant de communiquer un point avec Arduino avec DELAY
   digitalWrite(LED_BUILTIN, HIGH);
-  delay(500);
+  delay(500);                               ///0,5 secondes pour un point
   digitalWrite(LED_BUILTIN, LOW);
-  delay(1000);
+  delay(1000);                              ///pause de 1 seconde pour la lettre suivante
 }
 
-void Clignotement::clignotementdelay(String x) {   ///Fonction permettant de communiquer un tiret ou un point selon le mot demandé avec Arduino
+void Clignotement::clignotementdelay(String x) {   ///Fonction permettant de communiquer un tiret ou un point selon le mot demandé avec Arduino avec DELAY
   for (int i = 0; i < x.length(); i++) {
-    if (x.charAt(i) == '.') {
+    if (x.charAt(i) == '.') {                      ///Selon un point ou un tiret, on appelle la fonction correspondante
       point();
     }else if (x.charAt(i) == '-'){
       tiret();
@@ -28,11 +28,11 @@ void Clignotement::clignotementdelay(String x) {   ///Fonction permettant de com
   }
 }
 
-void Clignotement::clignotementmillis(String x) {   ///Fonction permettant de communiquer un tiret ou un point selon le mot demandé avec Arduino
+void Clignotement::clignotementmillis(String x) {   ///Fonction permettant de communiquer un tiret ou un point selon le mot demandé avec Arduino avec MILLIS
   for (int i = 0; i < x.length();i++) {
     if (x.charAt(i)=='.'){
-      millisactuel = millis();
-      while ((millis()- millisactuel) < 1000){
+      millisactuel = millis();                       ///On démarre le chronomètre
+      while ((millis()- millisactuel) < 1000){       ///si le temps actuel moins le départ est inférieur à 1 seconde, on allume la led jusqu'à 2 secondes pour un point
         digitalWrite(LED_BUILTIN, HIGH);
       }
       while ((millis()-millisactuel) < 2000){
@@ -40,7 +40,7 @@ void Clignotement::clignotementmillis(String x) {   ///Fonction permettant de co
       }
     }
     else if (x.charAt(i)=='-'){
-      millisactuel = millis();
+      millisactuel = millis();                        //////si le temps actuel moins le départ est inférieur à 2 secondes, on allume la led jusqu'à 3 secondes pour un tiret
       while ((millis()- millisactuel) < 2000){
         digitalWrite(LED_BUILTIN, HIGH);
       }
