@@ -24,7 +24,7 @@ void Clignotement::espace() {   ///Fonction permettant de communiquer un point a
 
 void Clignotement::clignotementdelay(String x) {   ///Fonction permettant de communiquer un tiret ou un point selon le mot demandé avec Arduino avec DELAY
   for (int i = 0; i < x.length(); i++) {
-    if (x.charAt(i) == '.') {                      ///Selon un point ou un tiret, on appelle la fonction correspondante
+    if (x.charAt(i) == '.') {                      ///Selon un point, un tiret ou un espace, on appelle la fonction correspondante
       point();
     }else if (x.charAt(i) == '-'){
       tiret();
@@ -38,7 +38,7 @@ void Clignotement::clignotementmillis(String x) {   ///Fonction permettant de co
   for (int i = 0; i < x.length();i++) {
     if (x.charAt(i)=='.'){
       millisactuel = millis();                       ///On démarre le chronomètre
-      while ((millis()- millisactuel) < 500){       ///si le temps actuel moins le départ est inférieur à 1 seconde, on allume la led jusqu'à 1,5 secondes pour un point
+      while ((millis()- millisactuel) < 500){       ///si le temps actuel moins le départ est inférieur à 0,5 seconde, on allume la led jusqu'à 1,5 secondes pour un point
         digitalWrite(LED_BUILTIN, HIGH);
       }
       while ((millis()-millisactuel) < 1500){
@@ -55,10 +55,10 @@ void Clignotement::clignotementmillis(String x) {   ///Fonction permettant de co
       }
     }
     else if (x.charAt(i)=='/'){
-      millisactuel = millis();                        //////si le temps actuel moins le départ est inférieur à 2 secondes, on allume la led jusqu'à 3 secondes pour un tiret
-      while ((millis()-millisactuel) < 5000){
+      millisactuel = millis();                        //////si le temps actuel moins le départ est inférieur à 5 secondes, on maintient le led éteinte pour marquer l'espace
+      while ((millis()-millisactuel) < 3500){
         digitalWrite(LED_BUILTIN, LOW);
       }
-    } 
+    }
   }
 }
