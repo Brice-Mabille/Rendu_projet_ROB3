@@ -13,9 +13,10 @@ private:
 public:
     Clignotement(String x);
     Clignotement();
-    void clignotementmillis(String x);
-    void point();
+    void point();                             
     void tiret();
+    void espace();
+    void clignotementmillis(String x);        ///// Traitement de pause entre un point et un tiret
     void clignotementdelay(String x);
 };
 

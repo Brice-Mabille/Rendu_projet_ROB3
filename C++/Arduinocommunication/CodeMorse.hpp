@@ -11,11 +11,10 @@ class CodeMorse{   /// Definition de ma classe CodeMorse
 
   public:
     CodeMorse();
-    String morsemot;
-    String mot;
+    String morsemot;            ///mot en morse
+    String lettremot;           ///mot avec lettres
     String morse;
-    void traduction(char text);
-    void textversmorse();
+    void textversmorse();       ///fonction de traduction 
 };
 
 #endif

@@ -13,10 +13,10 @@ void setup() {   ///Téléversement du code pour le clignotement sur la Arduino
 void loop() {
 
 if (Serial.available()){                /// Appel des fonctions pour la traduction et le clignotement de la phrase ajoutée dans le moniteur
-      cm.mot = Serial.readString();
+      cm.lettremot = Serial.readString();
       cm.textversmorse();
-      cl.clignotementmillis(cm.morsemot);       ///fonction avec millis
-      //cl.clignotementdelay(cm.morsemot);      ///fonction avec delay
+      //cl.clignotementmillis(cm.morsemot);       ///fonction avec millis
+      cl.clignotementdelay(cm.morsemot);      ///fonction avec delay
 }
 
 }
