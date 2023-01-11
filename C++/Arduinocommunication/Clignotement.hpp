@@ -7,7 +7,7 @@ class Clignotement   /// Definition de ma classe Clignotement
 {
 
 private:
-    int millisactuel;
+    unsigned long millisactuel;
 
 public:
     Clignotement(String x);

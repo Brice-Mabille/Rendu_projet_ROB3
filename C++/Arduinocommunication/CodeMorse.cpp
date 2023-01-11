@@ -10,6 +10,8 @@ void CodeMorse::textversmorse(){  ///fonction permettant de demander un mot et r
     Serial.println(lettremot);
     
     Serial.println("La traduction est:\n");
+
+    morsemot = '\0';                                    ///Réinitialisation du mot
     
     for (int i = 0; i < lettremot.length(); ++i){       ///On traduit lettre par lettre le mot ou phrase demandée
         for (int j = 0; j < 83; j++){
